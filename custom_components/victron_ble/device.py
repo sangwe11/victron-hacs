@@ -417,4 +417,11 @@ class VictronBluetoothDeviceData(BluetoothData):
                 device_class=SensorDeviceClass.ENUM,
             )
 
+            self.update_sensor(
+                key=VictronSensor.OUTPUT_POWER,
+                native_unit_of_measurement=Units.POWER_WATT,
+                native_value=parsed.get_output_current() * parsed.get_output_voltage(),
+                device_class=SensorDeviceClass.POWER,
+            )
+
         return
