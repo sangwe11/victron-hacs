@@ -120,6 +120,15 @@ SENSOR_DESCRIPTIONS: Dict[Tuple[SensorDeviceClass, Optional[Units]], Any] = {
         state_class=SensorStateClass.MEASUREMENT,
     ),
     (
+        VictronSensor.INPUT_CURRENT,
+        Units.ELECTRIC_CURRENT_AMPERE
+    ): SensorEntityDescription(
+        key=VictronSensor.INPUT_CURRENT,
+        device_class=SensorDeviceClass.CURRENT,
+        native_unit_of_measurement=Units.ELECTRIC_CURRENT_AMPERE,
+        state_class=SensorStateClass.MEASUREMENT,
+    ),
+    (
         VictronSensor.OUTPUT_VOLTAGE,
         Units.ELECTRIC_POTENTIAL_VOLT,
     ): SensorEntityDescription(
